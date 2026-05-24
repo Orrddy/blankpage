@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Red gradient for outer ring -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9A0B22;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#C8102E;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#6E0819;stop-opacity:1"/>
+    </linearGradient>
+    <!-- Gold gradient for accents -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8CC6A;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#A8892A;stop-opacity:1"/>
+    </linearGradient>
+    <!-- White glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- Drop shadow -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.25)"/>
+    </filter>
+  </defs>
+
+  <!-- Outer decorative ring -->
+  <circle cx="100" cy="100" r="96" fill="url(#redGrad)" filter="url(#shadow)"/>
+
+  <!-- Gold outer border ring -->
+  <circle cx="100" cy="100" r="93" fill="none" stroke="url(#goldGrad)" stroke-width="2.5"/>
+
+  <!-- Outer ring notch pattern (8 gold dots) -->
+  <g fill="url(#goldGrad)">
+    <circle cx="100" cy="10" r="3"/>
+    <circle cx="167" cy="33" r="3"/>
+    <circle cx="190" cy="100" r="3"/>
+    <circle cx="167" cy="167" r="3"/>
+    <circle cx="100" cy="190" r="3"/>
+    <circle cx="33"  cy="167" r="3"/>
+    <circle cx="10"  cy="100" r="3"/>
+    <circle cx="33"  cy="33"  r="3"/>
+  </g>
+
+  <!-- Inner white background circle -->
+  <circle cx="100" cy="100" r="78" fill="#FFFFFF"/>
+
+  <!-- Inner gold ring -->
+  <circle cx="100" cy="100" r="74" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+
+  <!-- 8-point star (prosperity symbol) -->
+  <polygon
+    points="100,35 107,68 125,52 112,80 146,73 125,95 158,100 125,105 146,127 112,120 125,148 107,132 100,165 93,132 75,148 88,120 54,127 75,105 42,100 75,95 54,73 88,80 75,52 93,68"
+    fill="url(#redGrad)"
+    opacity="0.07"
+  />
+
+  <!-- Diamond shield emblem -->
+  <g transform="translate(100,95)">
+    <!-- Shield outer shape -->
+    <path d="M0,-38 L28,-18 L28,8 Q28,28 0,42 Q-28,28 -28,8 L-28,-18 Z"
+      fill="url(#redGrad)" filter="url(#glow)"/>
+    <!-- Shield inner highlight -->
+    <path d="M0,-30 L22,-14 L22,7 Q22,22 0,34 Q-22,22 -22,7 L-22,-14 Z"
+      fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <!-- Chinese character 安 (peace/security) stylized -->
+    <text x="0" y="8" font-family="'Noto Serif SC', serif" font-size="20" font-weight="700"
+      fill="#FFFFFF" text-anchor="middle" dominant-baseline="middle" filter="url(#glow)">安</text>
+  </g>
+
+  <!-- Gold horizontal divider lines -->
+  <line x1="55" y1="148" x2="145" y2="148" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.7"/>
+  <line x1="62" y1="152" x2="138" y2="152" stroke="url(#goldGrad)" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Bank name — English -->
+  <text x="100" y="168"
+    font-family="'Inter', Arial, sans-serif"
+    font-size="9.5"
+    font-weight="700"
+    letter-spacing="2.5"
+    fill="#C8102E"
+    text-anchor="middle"
+    dominant-baseline="middle">AMHSRC</text>
+
+  <!-- Bank name — Chinese subtitle -->
+  <text x="100" y="180"
+    font-family="'Noto Serif SC', serif"
+    font-size="8.5"
+    font-weight="500"
+    letter-spacing="1"
+    fill="#A8892A"
+    text-anchor="middle"
+    dominant-baseline="middle">国际商业银行</text>
+
+  <!-- Corner gold ornaments (top) -->
+  <g stroke="url(#goldGrad)" stroke-width="1.2" fill="none" opacity="0.6">
+    <path d="M68,28 Q84,22 100,20 Q116,22 132,28"/>
+    <path d="M72,32 Q86,27 100,25 Q114,27 128,32"/>
+  </g>
+</svg>

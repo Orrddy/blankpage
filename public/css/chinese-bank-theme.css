@@ -1,0 +1,817 @@
+/* ============================================================
+   AMHSRC.COM — Chinese Commercial Banking Design System
+   Premium Red & Gold Enterprise Theme
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+
+/* ── CSS Design Tokens ── */
+:root {
+  /* Brand Colors */
+  --cbn-red:          #C8102E;
+  --cbn-red-dark:     #9A0B22;
+  --cbn-red-deeper:   #6E0819;
+  --cbn-red-light:    #E8405A;
+  --cbn-red-muted:    #F9E5E8;
+  --cbn-red-faint:    #FDF3F5;
+
+  --cbn-gold:         #D4AF37;
+  --cbn-gold-dark:    #A8892A;
+  --cbn-gold-light:   #E8CC6A;
+  --cbn-gold-pale:    #FBF5DE;
+  --cbn-gold-faint:   #FEFCF0;
+
+  /* Neutrals */
+  --cbn-charcoal:     #222222;
+  --cbn-dark:         #1A1A2E;
+  --cbn-slate:        #2D3748;
+  --cbn-gray-700:     #4A5568;
+  --cbn-gray-500:     #718096;
+  --cbn-gray-400:     #A0AEC0;
+  --cbn-gray-200:     #E2E8F0;
+  --cbn-gray-100:     #F7FAFC;
+  --cbn-white:        #FFFFFF;
+
+  /* Sidebar */
+  --cbn-sidebar-bg:     #12111C;
+  --cbn-sidebar-hover:  rgba(212,175,55,0.08);
+  --cbn-sidebar-active: rgba(200,16,46,0.15);
+  --cbn-sidebar-border: rgba(212,175,55,0.15);
+  --cbn-sidebar-text:   rgba(255,255,255,0.75);
+  --cbn-sidebar-label:  rgba(212,175,55,0.5);
+
+  /* Spacing & Radius */
+  --cbn-radius-sm:   6px;
+  --cbn-radius:      10px;
+  --cbn-radius-lg:   16px;
+  --cbn-radius-xl:   24px;
+
+  /* Shadows */
+  --cbn-shadow-sm:  0 1px 4px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+  --cbn-shadow:     0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --cbn-shadow-lg:  0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+  --cbn-shadow-gold: 0 4px 20px rgba(212,175,55,0.25);
+  --cbn-shadow-red:  0 4px 20px rgba(200,16,46,0.25);
+
+  /* Override Tailwind primary → Red */
+  --primary-color:         #C8102E;
+  --primary-color-dark:    #9A0B22;
+  --primary-color-light:   #E8405A;
+  --primary-color-lightest:#F9E5E8;
+  --secondary-color:       #D4AF37;
+  --secondary-color-dark:  #A8892A;
+  --secondary-color-light: #E8CC6A;
+  --bg-color:              #F7F8FA;
+  --sidebar-bg-color:      #12111C;
+  --sidebar-text-color:    #ffffff;
+  --card-bg-color:         #ffffff;
+  --text-color:            #222222;
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--cbn-charcoal);
+  background-color: #F4F5F7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #F1F3F5; }
+::-webkit-scrollbar-thumb { background: #CBD5E0; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--cbn-red); }
+
+/* ============================================================
+   SIDEBAR — Dark Premium Chinese Bank Style
+   ============================================================ */
+
+/* Desktop sidebar override */
+.cbn-sidebar,
+div[class*="md:flex"][class*="md:w-64"] {
+  background: var(--cbn-sidebar-bg) !important;
+  border-right: 1px solid var(--cbn-sidebar-border) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Sidebar decorative top stripe */
+.cbn-sidebar::before,
+div[class*="md:flex"][class*="md:w-64"]::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cbn-red), var(--cbn-gold), var(--cbn-red));
+  z-index: 10;
+}
+
+/* Sidebar nav links */
+.cbn-sidebar nav a,
+div[class*="md:flex"][class*="md:w-64"] nav a {
+  color: var(--cbn-sidebar-text) !important;
+  border-radius: var(--cbn-radius-sm) !important;
+  transition: all 0.2s ease !important;
+  margin-bottom: 2px;
+}
+
+.cbn-sidebar nav a:hover,
+div[class*="md:flex"][class*="md:w-64"] nav a:hover {
+  background: var(--cbn-sidebar-hover) !important;
+  color: var(--cbn-gold-light) !important;
+}
+
+/* Active state */
+div[class*="md:flex"][class*="md:w-64"] nav a[class*="border-l-4"] {
+  background: var(--cbn-sidebar-active) !important;
+  border-left-color: var(--cbn-red) !important;
+  color: #fff !important;
+}
+
+div[class*="md:flex"][class*="md:w-64"] nav a[class*="border-l-4"] i {
+  color: var(--cbn-gold) !important;
+}
+
+/* Sidebar section labels */
+div[class*="md:flex"][class*="md:w-64"] p[class*="text-gray-500"] {
+  color: var(--cbn-sidebar-label) !important;
+  letter-spacing: 0.1em;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  padding-top: 4px;
+}
+
+/* Sidebar user card */
+div[class*="md:flex"][class*="md:w-64"] .bg-gray-50 {
+  background: rgba(255,255,255,0.04) !important;
+  border-color: var(--cbn-sidebar-border) !important;
+}
+
+div[class*="md:flex"][class*="md:w-64"] .bg-gray-50 p {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+div[class*="md:flex"][class*="md:w-64"] .bg-gray-50 p.text-xs {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* Sidebar bottom bar */
+div[class*="md:flex"][class*="md:w-64"] .border-t {
+  border-color: var(--cbn-sidebar-border) !important;
+}
+
+div[class*="md:flex"][class*="md:w-64"] .border-t span {
+  color: rgba(255,255,255,0.4) !important;
+}
+
+/* Sidebar icon colors */
+div[class*="md:flex"][class*="md:w-64"] nav a i[data-lucide] {
+  color: rgba(255,255,255,0.45) !important;
+  transition: color 0.2s;
+}
+
+div[class*="md:flex"][class*="md:w-64"] nav a:hover i[data-lucide] {
+  color: var(--cbn-gold) !important;
+}
+
+/* ============================================================
+   TOP HEADER
+   ============================================================ */
+
+header.bg-white {
+  border-bottom: 1px solid #EAEDF0 !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04) !important;
+  position: relative;
+}
+
+/* Thin red accent line on top of header */
+header.bg-white::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cbn-red-dark), var(--cbn-red), var(--cbn-gold));
+}
+
+/* Balance pill in header */
+header .bg-primary-50 {
+  background: linear-gradient(135deg, var(--cbn-red-faint), var(--cbn-gold-faint)) !important;
+  border: 1px solid rgba(212,175,55,0.2) !important;
+}
+
+header .bg-primary-50 span {
+  color: var(--cbn-charcoal) !important;
+  font-weight: 600 !important;
+}
+
+header .bg-primary-50 i {
+  color: var(--cbn-red) !important;
+}
+
+/* ============================================================
+   CARDS & PANELS
+   ============================================================ */
+
+.bg-white.rounded-xl,
+.bg-white.rounded-2xl {
+  box-shadow: var(--cbn-shadow-sm) !important;
+  border-color: #EAEDF0 !important;
+  transition: box-shadow 0.25s ease;
+}
+
+.bg-white.rounded-xl:hover {
+  box-shadow: var(--cbn-shadow) !important;
+}
+
+/* Card header borders */
+.border-b.border-gray-200 {
+  border-color: #F0F2F5 !important;
+}
+
+/* ============================================================
+   BALANCE CARD — Red/Gold Gradient
+   ============================================================ */
+
+/* Override the primary gradient balance card */
+.bg-gradient-to-br.from-primary-600 {
+  background: linear-gradient(135deg, var(--cbn-red-deeper) 0%, var(--cbn-red-dark) 40%, var(--cbn-red) 75%, #E04060 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add Chinese lattice pattern overlay */
+.bg-gradient-to-br.from-primary-600::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%23ffffff' stroke-width='0.4' opacity='0.08'%3E%3Cpath d='M0 20h40M20 0v40M0 0l40 40M40 0L0 40'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Gold accent glow in balance card */
+.bg-gradient-to-br.from-primary-600 .bg-white\/20 {
+  background: rgba(212,175,55,0.15) !important;
+  border: 1px solid rgba(212,175,55,0.2) !important;
+}
+
+/* ============================================================
+   QUICK ACTIONS
+   ============================================================ */
+
+.from-primary-50.to-primary-100,
+.from-primary-50 {
+  background: linear-gradient(135deg, var(--cbn-red-faint), var(--cbn-red-muted)) !important;
+}
+
+.from-primary-50.to-primary-100 i,
+.bg-primary-100 i {
+  color: var(--cbn-red) !important;
+}
+
+.hover\:from-primary-100:hover,
+.hover\:from-primary-100 {
+  background: linear-gradient(135deg, var(--cbn-red-muted), #F5D0D6) !important;
+}
+
+.border-primary-200 {
+  border-color: rgba(200,16,46,0.2) !important;
+}
+
+/* ============================================================
+   STAT PILLS (dashboard top bar)
+   ============================================================ */
+
+.from-primary-50.to-white {
+  background: linear-gradient(135deg, var(--cbn-red-faint), #fff) !important;
+  border-color: rgba(200,16,46,0.12) !important;
+}
+
+/* ============================================================
+   BUTTONS — Primary Red
+   ============================================================ */
+
+.bg-primary-600,
+button.bg-primary-600,
+a.bg-primary-600 {
+  background: var(--cbn-red) !important;
+  border-color: var(--cbn-red) !important;
+  box-shadow: 0 2px 8px rgba(200,16,46,0.3) !important;
+  transition: all 0.2s ease !important;
+}
+
+.bg-primary-600:hover,
+button.bg-primary-600:hover,
+a.bg-primary-600:hover,
+.hover\:bg-primary-700:hover {
+  background: var(--cbn-red-dark) !important;
+  box-shadow: 0 4px 14px rgba(200,16,46,0.4) !important;
+  transform: translateY(-1px) !important;
+}
+
+.bg-primary-700 {
+  background: var(--cbn-red-dark) !important;
+}
+
+.hover\:bg-primary-800:hover {
+  background: var(--cbn-red-deeper) !important;
+}
+
+/* Text primary */
+.text-primary-600,
+.text-primary-500 {
+  color: var(--cbn-red) !important;
+}
+
+.hover\:text-primary-500:hover,
+.hover\:text-primary-600:hover {
+  color: var(--cbn-red-dark) !important;
+}
+
+/* Focus rings */
+.focus\:ring-primary-500:focus,
+input:focus {
+  --tw-ring-color: rgba(200,16,46,0.3) !important;
+  border-color: var(--cbn-red) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(200,16,46,0.12) !important;
+}
+
+/* ============================================================
+   INPUTS & FORMS
+   ============================================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+select,
+textarea {
+  border-color: #DDE1E7 !important;
+  border-radius: var(--cbn-radius-sm) !important;
+  transition: all 0.2s ease !important;
+  background-color: #fff !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--cbn-red) !important;
+  box-shadow: 0 0 0 3px rgba(200,16,46,0.1) !important;
+  outline: none !important;
+}
+
+/* Input icon color on focus */
+.input-wrapper:focus-within .input-icon,
+.input-icon {
+  color: var(--cbn-red) !important;
+}
+
+/* ============================================================
+   TABLES
+   ============================================================ */
+
+thead.bg-gray-50 {
+  background: linear-gradient(90deg, #F8FAFB, #FFF8F9) !important;
+}
+
+thead th {
+  color: var(--cbn-gray-700) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+}
+
+tbody tr:hover {
+  background: var(--cbn-red-faint) !important;
+}
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.bg-green-100 { background: #E6F9F0 !important; }
+.text-green-800 { color: #1A7A4A !important; }
+.bg-green-600 { background: #22A05B !important; }
+
+.bg-yellow-100 { background: #FFF8E1 !important; }
+.text-yellow-800 { color: #8A5C00 !important; }
+
+.bg-red-100 { background: #FDE8EB !important; }
+.text-red-800 { color: var(--cbn-red-dark) !important; }
+
+/* ============================================================
+   NOTIFICATIONS DROPDOWN
+   ============================================================ */
+
+[x-show="notificationsOpen"],
+[x-show="userDropdownOpen"] {
+  border: 1px solid #EAEDF0 !important;
+  box-shadow: var(--cbn-shadow-lg) !important;
+  border-radius: var(--cbn-radius) !important;
+}
+
+/* ============================================================
+   MOBILE MENU
+   ============================================================ */
+
+/* Mobile popup card */
+.relative.w-11\/12.max-w-md.bg-white.rounded-2xl {
+  border-top: 4px solid var(--cbn-red) !important;
+  box-shadow: var(--cbn-shadow-lg) !important;
+}
+
+/* Mobile grid icons */
+.aspect-square.flex.flex-col.items-center.justify-center.rounded-xl {
+  transition: all 0.2s ease !important;
+}
+
+.aspect-square:hover {
+  transform: translateY(-2px) !important;
+}
+
+/* ============================================================
+   PAGE LOADING — Red/Gold
+   ============================================================ */
+
+.page-loading {
+  background: linear-gradient(135deg, #0E0D16, #1A0A10) !important;
+}
+
+.loading-animation .circle:nth-child(1) {
+  border-top-color: var(--cbn-red) !important;
+}
+.loading-animation .circle:nth-child(2) {
+  border-right-color: var(--cbn-gold) !important;
+}
+.loading-animation .circle:nth-child(3) {
+  border-bottom-color: var(--cbn-red-light) !important;
+}
+.loading-animation .circle:nth-child(4) {
+  border-left-color: var(--cbn-gold-light) !important;
+}
+
+.loading-animation .core {
+  background: linear-gradient(45deg, var(--cbn-red), var(--cbn-gold)) !important;
+  box-shadow: 0 0 20px rgba(200,16,46,0.5) !important;
+}
+
+.page-loading .text {
+  background: linear-gradient(90deg, var(--cbn-gold), var(--cbn-red-light), var(--cbn-gold)) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  animation: gradient 2s linear infinite !important;
+  font-family: 'Noto Serif SC', serif !important;
+  font-size: 1rem !important;
+  letter-spacing: 0.15em !important;
+}
+
+/* ============================================================
+   QUICK TRANSFER & HELP CARDS
+   ============================================================ */
+
+.bg-gray-50.rounded-lg {
+  transition: all 0.2s ease !important;
+}
+
+.bg-gray-50.rounded-lg:hover {
+  background: var(--cbn-red-faint) !important;
+  border-color: rgba(200,16,46,0.15) !important;
+}
+
+.bg-gradient-to-br.from-primary-50.via-primary-100 {
+  background: linear-gradient(135deg, var(--cbn-red-faint), var(--cbn-gold-faint)) !important;
+  border-color: rgba(212,175,55,0.2) !important;
+}
+
+.text-primary-600[data-lucide="help-circle"] {
+  color: var(--cbn-red) !important;
+}
+
+/* ============================================================
+   KYC VERIFICATION BADGES
+   ============================================================ */
+
+/* In sidebar user card */
+.bg-green-50 { background: #F0FBF4 !important; }
+.border-green-100 { border-color: #B7DFC8 !important; }
+.text-green-800 { color: #1B6B3A !important; }
+
+.bg-red-50 { background: var(--cbn-red-faint) !important; }
+.border-red-100 { border-color: rgba(200,16,46,0.15) !important; }
+.text-red-800 { color: var(--cbn-red-dark) !important; }
+
+/* ============================================================
+   PROFILE / LOGOUT BUTTONS IN SIDEBAR
+   ============================================================ */
+
+div[class*="md:flex"][class*="md:w-64"] a.border.border-gray-300 {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.12) !important;
+  color: rgba(255,255,255,0.75) !important;
+}
+
+div[class*="md:flex"][class*="md:w-64"] a.border.border-gray-300:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+}
+
+div[class*="md:flex"][class*="md:w-64"] a.bg-primary-600 {
+  background: var(--cbn-red) !important;
+  color: #fff !important;
+}
+
+/* ============================================================
+   AUTH PAGES — Login / Register
+   ============================================================ */
+
+/* Left branding panel */
+.cbn-auth-left {
+  background: linear-gradient(160deg, var(--cbn-red-deeper) 0%, var(--cbn-red-dark) 35%, var(--cbn-red) 70%, #D63050 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cbn-auth-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(212,175,55,0.12) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='0.4' opacity='0.07'%3E%3Crect x='10' y='10' width='40' height='40'/%3E%3Crect x='20' y='20' width='20' height='20'/%3E%3Cline x1='10' y1='10' x2='50' y2='50'/%3E%3Cline x1='50' y1='10' x2='10' y2='50'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* Override the hidden left panel on login */
+.hidden.lg\:flex.lg\:w-1\/2.bg-gradient-to-br.from-primary-600 {
+  background: linear-gradient(160deg, var(--cbn-red-deeper), var(--cbn-red-dark) 50%, var(--cbn-red)) !important;
+}
+
+/* Login card */
+.bg-white.rounded-2xl.shadow-xl {
+  border: 1px solid #EAEDF0 !important;
+  box-shadow: var(--cbn-shadow-lg) !important;
+  border-top: 3px solid var(--cbn-red) !important;
+  overflow: hidden;
+}
+
+/* Auth card header */
+.bg-white.rounded-2xl h2 {
+  color: var(--cbn-charcoal) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* ============================================================
+   SECONDARY / GREEN / TEAL ELEMENTS → Gold Accent
+   ============================================================ */
+
+.bg-secondary-50, .from-secondary-50 {
+  background: var(--cbn-gold-faint) !important;
+}
+.bg-secondary-100, .to-secondary-100 {
+  background: var(--cbn-gold-pale) !important;
+}
+.text-secondary-600 {
+  color: var(--cbn-gold-dark) !important;
+}
+
+/* ============================================================
+   CARD HOVER ANIMATIONS
+   ============================================================ */
+
+.group:hover .group-hover\:shadow-md {
+  box-shadow: 0 8px 24px rgba(200,16,46,0.15) !important;
+}
+
+/* ============================================================
+   ALERT COMPONENTS
+   ============================================================ */
+
+.bg-red-100.border-l-4.border-red-500 {
+  background: var(--cbn-red-faint) !important;
+  border-left-color: var(--cbn-red) !important;
+  color: var(--cbn-red-dark) !important;
+  border-radius: var(--cbn-radius-sm) !important;
+}
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+
+.page-item.active .page-link,
+.pagination .active a {
+  background: var(--cbn-red) !important;
+  border-color: var(--cbn-red) !important;
+}
+
+.page-link:hover {
+  color: var(--cbn-red) !important;
+}
+
+/* ============================================================
+   ADMIN PANEL (Bootstrap-based sidebar)
+   ============================================================ */
+
+.sidebar {
+  background: var(--cbn-sidebar-bg) !important;
+  border-right: 1px solid var(--cbn-sidebar-border) !important;
+}
+
+/* Admin sidebar top gradient accent */
+.sidebar::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cbn-red), var(--cbn-gold), var(--cbn-red));
+  margin-bottom: 0;
+}
+
+.sidebar .nav-primary .nav-item a {
+  color: var(--cbn-sidebar-text) !important;
+  transition: all 0.2s ease !important;
+}
+
+.sidebar .nav-primary .nav-item a:hover,
+.sidebar .nav-primary .nav-item.active a {
+  background: var(--cbn-sidebar-active) !important;
+  color: #fff !important;
+  border-left: 3px solid var(--cbn-red) !important;
+}
+
+.sidebar .nav-primary .nav-item a i,
+.sidebar .nav-primary .nav-item a .fas,
+.sidebar .nav-primary .nav-item a .fa {
+  color: rgba(255,255,255,0.45) !important;
+}
+
+.sidebar .nav-primary .nav-item.active a i,
+.sidebar .nav-primary .nav-item.active a .fas,
+.sidebar .nav-primary .nav-item.active a .fa {
+  color: var(--cbn-gold) !important;
+}
+
+.sidebar .user .info a span {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+.sidebar .user .info .user-level {
+  color: var(--cbn-gold-light) !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+}
+
+/* Admin sub-menu items */
+.sidebar .nav-collapse .nav-item a {
+  color: rgba(255,255,255,0.6) !important;
+  padding-left: 2.5rem !important;
+}
+
+.sidebar .nav-collapse .nav-item a:hover {
+  color: var(--cbn-gold-light) !important;
+  background: transparent !important;
+}
+
+/* ============================================================
+   LOAN / SERVICE CARDS
+   ============================================================ */
+
+.bg-purple-100 { background: #F3F0FF !important; }
+.text-purple-600, .text-purple-700 { color: #7C3AED !important; }
+.bg-purple-50 { background: #FAF9FF !important; }
+.border-purple-200 { border-color: rgba(124,58,237,0.2) !important; }
+
+/* ============================================================
+   ACCOUNT STATISTICS PANEL
+   ============================================================ */
+
+.h-10.w-10.rounded-full.bg-primary-100 {
+  background: linear-gradient(135deg, var(--cbn-red-faint), var(--cbn-red-muted)) !important;
+}
+
+.h-10.w-10.rounded-full.bg-primary-100 i {
+  color: var(--cbn-red) !important;
+}
+
+/* ============================================================
+   MISCELLANEOUS POLISH
+   ============================================================ */
+
+/* Rounded pill for balance toggle */
+.rounded-full.bg-primary-50 {
+  background: linear-gradient(135deg, var(--cbn-red-faint), var(--cbn-gold-faint)) !important;
+}
+
+/* "View all" links */
+a.text-primary-600.hover\:text-primary-500 {
+  font-weight: 500 !important;
+  color: var(--cbn-red) !important;
+}
+
+/* Checkbox accent */
+input[type="checkbox"]:checked {
+  accent-color: var(--cbn-red);
+}
+
+/* ── Smooth transition on all interactive elements ── */
+a, button, input, select, textarea {
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* ============================================================
+   BRAND TYPOGRAPHY UTILITY
+   ============================================================ */
+
+.cbn-brand-text {
+  font-family: 'Noto Serif SC', 'Inter', serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.cbn-gold-text {
+  color: var(--cbn-gold) !important;
+}
+
+.cbn-red-text {
+  color: var(--cbn-red) !important;
+}
+
+/* ── Logo seal decorative ring ── */
+.cbn-logo-seal {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cbn-logo-seal::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(var(--cbn-gold), var(--cbn-red), var(--cbn-gold), var(--cbn-red), var(--cbn-gold));
+  opacity: 0.3;
+  animation: rotateSeal 8s linear infinite;
+}
+
+@keyframes rotateSeal {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Shimmer effect on primary buttons ── */
+.bg-primary-600 {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-primary-600::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.5s ease;
+}
+
+.bg-primary-600:hover::after {
+  left: 160%;
+}
+
+/* ── Sidebar logo area ── */
+.cbn-sidebar-logo {
+  padding: 20px 16px 8px;
+  border-bottom: 1px solid var(--cbn-sidebar-border);
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================ */
+
+@media (max-width: 768px) {
+  /* Full-width mobile header accent line */
+  header.bg-white::before {
+    height: 2px;
+  }
+}
+
+/* ── Owl Carousel Slider Backgrounds Overrides ── */
+.hero-bg-1:before {
+  background-image: url('../../temp/custom/base/img/hero-bg5.jpg') !important;
+}
+
+.hero-bg-2:before {
+  background-image: url('../../temp/custom/img/bg2.jpg') !important;
+}
