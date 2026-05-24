@@ -24,19 +24,19 @@
         },
         {
             "src": "/temp/(.*)",
-            "dest": "/temp/$1"
-        },
-        {
-            "src": "/assets/(.*)",
-            "dest": "/assets/$1"
+            "dest": "/public/temp/$1"
         },
         {
             "src": "/dash/(.*)",
-            "dest": "/dash/$1"
+            "dest": "/public/dash/$1"
         },
         {
             "src": "/dash2/(.*)",
-            "dest": "/dash2/$1"
+            "dest": "/public/dash2/$1"
+        },
+        {
+            "src": "/error/(.*)",
+            "dest": "/public/error/$1"
         },
         {
             "src": "/favicon.ico",

@@ -36,28 +36,28 @@
     <link rel="stylesheet" href="{{ asset('css/chinese-bank-theme.css') }}">
 
     <!--Bootstrap css-->
-    <link rel="stylesheet" href="temp/custom/base/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/bootstrap.min.css">
     <!--Magnific popup css-->
-    <link rel="stylesheet" href="temp/custom/base/css/magnific-popup.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/magnific-popup.css">
     <!--Themify icon css-->
-    <link rel="stylesheet" href="temp/custom/base/css/themify-icons.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/themify-icons.css">
     <!--Fontawesome icon css-->
-    <link rel="stylesheet" href="temp/custom/base/css/all.min.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/all.min.css">
     <!--animated css-->
-    <link rel="stylesheet" href="temp/custom/base/css/animate.min.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/animate.min.css">
     <!--ytplayer css-->
-    <link rel="stylesheet" href="temp/custom/base/css/jquery.mb.YTPlayer.min.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/jquery.mb.YTPlayer.min.css">
     <!--Owl carousel css-->
-    <link rel="stylesheet" href="temp/custom/base/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="temp/custom/base/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/owl.theme.default.min.css">
     <!--custom css-->
-    <link rel="stylesheet" href="temp/custom/base/css/style.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/style.css">
     <!--responsive css-->
-    <link rel="stylesheet" href="temp/custom/base/css/responsive.css">
+    <link rel="stylesheet" href="/temp/custom/base/css/responsive.css">
 
-    <link rel="stylesheet" href="base/cdnjs.cloudflare.co/ajax/libs/normalize/5.0.0/normalize.min.html">
-    <link rel='stylesheet' href='fonts.googleapis.co/icone91fe91fe91f.html?family=Material+Icons'>
-    <link rel="stylesheet" href="temp/custom/base/css/customstyle.css">
+    <link rel="stylesheet" href="/temp/custom/base/cdnjs.cloudflare.co/ajax/libs/normalize/5.0.0/normalize.min.html">
+    <link rel='stylesheet' href='/temp/custom/fonts.googleapis.co/icone91fe91fe91f.html?family=Material+Icons'>
+    <link rel="stylesheet" href="/temp/custom/base/css/customstyle.css">
     <style>
         .info {
             color: rgba(2, 2, 211, 0.753);
@@ -383,29 +383,29 @@
         @include('layouts.lang')
 
 <!--jQuery-->
-<script data-cfasync="false" src="https://cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="temp/custom/base/js/jquery-3.4.1.min.js"></script>
+<script data-cfasync="false" src="https://cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/temp/custom/base/js/jquery-3.4.1.min.js"></script>
 <!--Popper js-->
-<script src="temp/custom/base/js/popper.min.js"></script>
+<script src="/temp/custom/base/js/popper.min.js"></script>
 <!--Bootstrap js-->
-<script src="temp/custom/base/js/bootstrap.min.js"></script>
+<script src="/temp/custom/base/js/bootstrap.min.js"></script>
 <!--Magnific popup js-->
-<script src="temp/custom/base/js/jquery.magnific-popup.min.js"></script>
+<script src="/temp/custom/base/js/jquery.magnific-popup.min.js"></script>
 <!--jquery easing js-->
-<script src="temp/custom/base/js/jquery.easing.min.js"></script>
+<script src="/temp/custom/base/js/jquery.easing.min.js"></script>
 <!--jquery ytplayer js-->
-<script src="temp/custom/base/js/jquery.mb.YTPlayer.min.js"></script>
+<script src="/temp/custom/base/js/jquery.mb.YTPlayer.min.js"></script>
 <!--Isotope filter js-->
-<script src="temp/custom/base/js/mixitup.min.js"></script>
+<script src="/temp/custom/base/js/mixitup.min.js"></script>
 <!--wow js-->
-<script src="temp/custom/base/js/wow.min.js"></script>
+<script src="/temp/custom/base/js/wow.min.js"></script>
 <!--owl carousel js-->
-<script src="temp/custom/base/js/owl.carousel.min.js"></script>
+<script src="/temp/custom/base/js/owl.carousel.min.js"></script>
 <!--countdown js-->
-<script src="temp/custom/base/js/jquery.countdown.min.js"></script>
+<script src="/temp/custom/base/js/jquery.countdown.min.js"></script>
 <!--custom js-->
-<script src="temp/custom/base/js/all.min.js"></script>
+<script src="/temp/custom/base/js/all.min.js"></script>
 <!--custom js-->
-<script src="temp/custom/base/js/scripts.js"></script>
+<script src="/temp/custom/base/js/scripts.js"></script>
 <!-- inpage script -->
 <script>
 function showTime(){
