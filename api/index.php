@@ -18,5 +18,5 @@ if (getenv('VERCEL') === '1' || isset($_ENV['VERCEL'])) {
     }
 }
 
-// Forward the request to Laravel's public entrypoint
-require __DIR__ . '/../public/index.php';
+// Forward the request to Laravel's root entrypoint
+require __DIR__ . '/../index.php';
