@@ -809,9 +809,9 @@ a, button, input, select, textarea {
 
 /* ── Owl Carousel Slider Backgrounds Overrides ── */
 .hero-bg-1:before {
-  background-image: url('../../temp/custom/base/img/hero-bg5.jpg') !important;
+  background-image: linear-gradient(rgba(18, 17, 28, 0.75), rgba(18, 17, 28, 0.75)), url('/temp/custom/base/img/hero-bg5.jpg') !important;
 }
 
 .hero-bg-2:before {
-  background-image: url('../../temp/custom/img/bg2.jpg') !important;
+  background-image: linear-gradient(rgba(18, 17, 28, 0.75), rgba(18, 17, 28, 0.75)), url('/temp/custom/img/bg2.jpg') !important;
 }
