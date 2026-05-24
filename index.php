@@ -1,5 +1,8 @@
 <?php
 
+// Disable PHP deprecation warnings caused by older vendor packages on PHP 8.2+
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED);
+
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 

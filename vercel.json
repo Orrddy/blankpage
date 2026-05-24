@@ -10,8 +10,7 @@
     },
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.8.0",
-            "excludeFiles": "dash/**, dash2/**, temp/**, assets/**, public/css/**, public/images/**, tests/**"
+            "runtime": "vercel-php@0.8.0"
         }
     },
     "routes": [
