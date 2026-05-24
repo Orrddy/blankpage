@@ -1,0 +1,15 @@
+# Ignore Node.js package files to prevent Vercel from running 'npm install' and creating node_modules
+package.json
+package-lock.json
+webpack.mix.js
+
+# Ignore development backups and database dumps
+database.sql
+*.sql
+.env
+.git
+
+# Ignore PHP testing files
+tests/
+phpunit.xml
+.phpunit.result.cache
