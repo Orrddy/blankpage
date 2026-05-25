@@ -123,6 +123,6 @@ return [
     |
     */
 
-    'manifest_path' => null,
+    'manifest_path' => '/tmp/livewire-components.php',
 
 ];
