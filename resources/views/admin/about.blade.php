@@ -13,33 +13,20 @@
 
                 <div class="mb-5 row">
                     <div class="col-12 text-center p-4 card shadow ">
-                        <h1 class="title1">About Remedy Remedy Grand Bank </h1>
-                        <center>BY </center>
-                        <p class="title1">Remedy codes technology</p>
-                        {{-- <div>
-								<button type="button" class="text-white btn btn-primary btn-sm disabled" disabled>
-								CONTACT US TODAT!!!!
-                                </button>
+                        <h1 class="title1">About AMHSRC Bank</h1>
+                        <p class="title1">Administration Panel</p>
 
-							</div> --}}
                         <div class="mt-4">
-                            <a href="https://t.me/+AU0r-kLCuto5M2Q0" target="_blank" class="btn btn-primary"> For Help/ More scripts</a>
+                            <h2>Contact Support</h2>
+                            <a class="btn btn-light" href="mailto:{{$settings->contact_email ?? 'support@amhsrc.com'}}">{{$settings->contact_email ?? 'support@amhsrc.com'}}</a>
                         </div>
 
                         <div class="mt-4">
-                            <h2>EMAIL US</h2>
-                            <a  class="btn btn-light">remedycodestech@gmail.com</a>
-                        </div>
-
-
-
-                        <div class="mt-4">
-                            <h2> Vist Our Website</h2>
-                           <a  class="btn btn-light" href="https://codesremedy.com/"> https://codesremedy.com/</a>
+                            <h2>Website</h2>
+                           <a class="btn btn-light" href="https://www.amhsrc.com"> https://www.amhsrc.com</a>
                        </div>
                     </div>
                 </div>
             </div>
         </div>
     @endsection
-

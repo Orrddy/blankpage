@@ -322,7 +322,7 @@
                                 <h4 class="text-white">GET IN TOUCH</h4>
                                 <ul class="get-in-touch-list">
                                     <li class="d-flex align-items-center py-2"><span class="fas fa-map-marker-alt mr-2"></span> {{$settings->address}} </li>
-                                    <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span> <a href="cdn-cgi/l/email-protection-2.html" class="__cf_email__" data-cfemail="3e6d4b4e4e514c4a7e595b535750575952515c5f525857505f505d5b105d51">[email&#160;protected]</a></a></li>
+                                    <li class="d-flex align-items-center py-2"><span class="fas fa-envelope mr-2"></span> <a href="mailto:{{$settings->contact_email}}">{{$settings->contact_email}}</a></li>
                                    <li class="d-flex align-items-center py-2"><i class="fas fa-comments"></i>&nbsp;&nbsp;<a href='#'> {{$settings->contact_email}} </a></li>
                                 </ul>
                             </div>
